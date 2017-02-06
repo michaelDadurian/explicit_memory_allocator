@@ -1,0 +1,42 @@
+Test,Status,Points,Max,Message
+Coalesce_no_coalescing,PASSED,2,2,
+Coalesce_free_block_after,PASSED,3,3,
+Malloc_Whole_First_Page_Multiple_Times,ERRORED,0,3,['The test crashed.']
+Realloc_Payload_Integrity_And_Moved,PASSED,3,3,
+Realloc_larger_fits_contiguous,PASSED,3,3,
+Malloc_a_Char,PASSED,2,2,
+Splinter,FAILED,0,3,"['Splinter.c:42: 48 byte block was splintered, Actual: 32, EXPECTED: 48']"
+Splitting,PASSED,3,3,
+Free_Coalesce_Forward_2_Times,FAILED,0,3,"['Free_Coalesce_Forward_2_Times.c:51: Expected 3936, was given: 96.']"
+Malloc_a_LongDouble,PASSED,2,2,
+Realloc_smaller_size_ptr_should_not_move,PASSED,3,3,
+StressTest,ERRORED,0,3,['The test crashed.']
+Info_Malloc_And_Free,FAILED,0,3,"['Info_Malloc_And_Free.c:49: Incorrect block size, Actual: 48, EXPECTED: 64']"
+Malloc_a_7737,ERRORED,0,3,['The test crashed.']
+Malloc_four_pages_across_multiple_mallocs_then_frees_all,ERRORED,0,3,['The test crashed.']
+Realloc_size_zero_expect_NULL,FAILED,0,3,['Realloc_size_zero_expect_NULL.c:33: Errno was not set']
+Malloc_a_Short,PASSED,2,2,
+Malloc_three_pages,ERRORED,0,3,['The test crashed.']
+Coalesce_free_block_before,PASSED,3,3,
+Info_count_frees,FAILED,0,1,"['Info_count_frees.c:41: Info had incorrect values, 1, EXPECTED: 2']"
+Info_count_allocations,PASSED,1,1,
+Info_count_external,PASSED,1,1,
+Info_count_coalesces,PASSED,1,1,
+Realloc_larger_fits_contiguous_absorb_splinter,PASSED,3,3,
+Malloc_a_Double,PASSED,2,2,
+Malloc_two_pages,ERRORED,0,3,['The test crashed.']
+Malloc_one_page,PASSED,3,3,
+Malloc_an_Integer,PASSED,2,2,
+Coalesce_free_before_and_after,PASSED,3,3,
+Realloc_larger_must_move,PASSED,3,3,
+Check_next_prev_pointers_of_free_block_at_head_of_list_BaseCase,PASSED,2,2,
+Malloc_773_Bytes,PASSED,2,2,
+External_fragmentation_ask_sf_sbrk_for_more_space,PASSED,3,3,
+ManagingMemory_consecutive_list,PASSED,3,3,
+Malloc_four_pages,ERRORED,0,3,['The test crashed.']
+Realloc_Both_Extend_In_Place_And_Move,PASSED,3,3,
+Free_block_check_header_footer_values,PASSED,2,2,
+Info_count_internal,PASSED,1,1,
+Check_next_prev_pointers_of_free_block_at_head_of_list_3FreeBlocks,PASSED,2,2,
+Required Unit Tests,Counted,3,3,Unittests
+Total,COUNTED,66,100,Total Points
