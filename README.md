@@ -13,8 +13,11 @@ The header of each block contains 4 bits of padding size (represented in bytes),
 ## Properties:
 
 Block Placement Policy: first fit placement.
+
 Management Policy: explicit free list with last-in-first-out policy, as in the most recently freed block becomes the head of the free list.
+
 Coalescing: immediate coalescing using boundary tags.
+
 Splitting Blocks: splits blocks which are too large to reduce internal fragmentation.
 
 ## Features:
