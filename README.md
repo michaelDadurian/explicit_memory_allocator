@@ -1,6 +1,6 @@
-A dynamic memory allocator to replace the standard malloc, realloc and free functions.
+A dynamic memory allocator written in C to replace the standard malloc, realloc and free functions.
 
-In this implementation, it is assumed that each memory will be 64-bits in size (1 quad word in x86-64). The address of each block must be divisible by 16 to properly align each block to be capable of storing the largest data type in an x86-64 architecture, a long double.
+In this implementation, it is assumed that each memory row will be 64-bits in size (1 quad word in x86-64). The address of each block must be divisible by 16 to properly align each block to be capable of storing the largest data type in an x86-64 architecture, a long double (16 bytes).
 
 
 Memory block headers & footers:
@@ -12,7 +12,7 @@ The header of each block contains 4 bits of padding size (represented in bytes),
 
 Properties:
 
-Block Placement Policy: irst fit placement.
+Block Placement Policy: first fit placement.
 Management Policy: explicit free list with last-in-first-out policy, as in the most recently freed block becomes the head of the free list.
 Coalescing: immediate coalescing using boundary tags.
 Splitting Blocks: splits blocks which are too large to reduce internal fragmentation.
