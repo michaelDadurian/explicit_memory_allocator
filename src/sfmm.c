@@ -12,12 +12,6 @@
 
 
 
-/**
- * All functions you make for the assignment must be implemented in this file.
- * Do not submit your assignment with a main function in this file.
- * If you submit with a main function in this file, you will get a zero.
- */
-
  sf_free_header* freelist_head = NULL;
  sf_footer* footOfPage = NULL;
 
@@ -44,7 +38,7 @@
 //padding only for allocated blocks
 
 /**
-* This is your implementation of malloc. It creates dynamic memory which
+* Implementation of malloc. It creates dynamic memory which
 * is aligned and padded properly for the underlying system. This memory
 * is uninitialized.
 * @param size The number of bytes requested to be allocated.
@@ -62,10 +56,12 @@ void *sf_malloc(size_t size){
 
 	if (size == 0)
 		return NULL;
-
+	
+	/*Return an error if requested size is greater than 4096 * 4*/
 	if (size > (4096 * 4))
 		errno = ENOMEM;
-
+	
+	/*Initialize head of free list*/
 	if (freelist_head == NULL){
 		//freelist_head = sf_sbrk(0);*
 		startOfHeap = sf_sbrk(0);
@@ -93,6 +89,7 @@ void *sf_malloc(size_t size){
 	void* top = freelist_head; //current top of heap
 
 
+	/*Align*/
 	if ((long)top % 16 == 0){
 		top += 8;
 		freelist_head = top;
